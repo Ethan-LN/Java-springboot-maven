@@ -1,4 +1,4 @@
-package springbootmaven.springboot;
+package springbootmaven.springboot.components;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
