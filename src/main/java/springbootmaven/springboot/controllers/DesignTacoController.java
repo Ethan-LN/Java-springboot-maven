@@ -1,5 +1,5 @@
 package springbootmaven.springboot.controllers;
-package tacos.web;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -11,9 +11,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import lombok.extern.slf4j.Slf4j;
-import tacos.Ingredient;
-import tacos.Ingredient.Type;
-import tacos.Taco;
+import springbootmaven.springboot.components.Ingredient;
+import springbootmaven.springboot.components.Ingredient.Type;
+import springbootmaven.springboot.components.Taco;
+import springbootmaven.springboot.components.TacoOrder;
 @Slf4j
 @Controller
 @RequestMapping("/design")
