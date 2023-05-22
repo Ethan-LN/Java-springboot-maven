@@ -15,6 +15,8 @@ import springbootmaven.springboot.components.Ingredient;
 import springbootmaven.springboot.components.Ingredient.Type;
 import springbootmaven.springboot.components.Taco;
 import springbootmaven.springboot.components.TacoOrder;
+import javax.validation.Valid;
+import org.springframework.validation.Errors;
 @Slf4j
 @Controller
 @RequestMapping("/design")
@@ -60,11 +62,14 @@ public class DesignTacoController {
                 .collect(Collectors.toList());
     }
     @PostMapping
-    public String processTaco(Taco taco,
+    public String processTaco(@Valid Taco taco, Errors errors,
                               @ModelAttribute TacoOrder tacoOrder) {
+
+        if (errors.hasErrors()) {
+            return "design";
+        }
         tacoOrder.addTaco(taco);
         log.info("Processing taco: {}", taco);
         return "redirect:/orders/current";
     }
-
 }
