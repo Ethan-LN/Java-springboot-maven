@@ -1,7 +1,8 @@
 package springbootmaven.springboot.components;
 
-import java.util.List;
-import java.util.ArrayList;
+import java.io.Serializable;
+import java.util.*;
+
 import lombok.Data;
 
 import javax.validation.constraints.Digits;
@@ -12,7 +13,10 @@ import java.util.List;
 import java.util.ArrayList;
 import lombok.Data;
 @Data
-public class TacoOrder {
+public class TacoOrder implements Serializable {
+    private static final long serialVersionUID = 1L;
+    private Long id;
+    private Date placedAt;
     @NotBlank(message="Delivery name is required")
     private String deliveryName;
     @NotBlank(message="Street is required")
